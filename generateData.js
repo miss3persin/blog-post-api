@@ -25,7 +25,7 @@ function generateBlogPost(id) {
     content: faker.lorem.paragraphs(10),
     tags: faker.lorem.words(Math.floor(Math.random() * 7)).split(' '),
     categories: faker.lorem.words(Math.floor(Math.random() * 7)).split(' '),
-    featuredImage: faker.image.imageUrl(),
+    featuredImage: 'https://picsum.photos/600/400',
     comments: generateComments()
   };
 }
