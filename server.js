@@ -19,8 +19,8 @@ server.use(middlewares);
 server.use(jsonServer.bodyParser);
 
 server.get('/posts', (req, res) => {
-  const count = parseInt(req.query.count) || 10; // Read the count query parameter, default to 10 if not provided
-  const blogPosts = blogPostAmount(count); // Generate blog post data
+  const count = parseInt(req.query.count) || 10;
+  const blogPosts = blogPostAmount(count);
 
   res.jsonp(blogPosts);
 });
