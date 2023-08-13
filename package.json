@@ -8,12 +8,13 @@
   },
   "scripts": {
     "start": "node server.js",
-    "dev":"nodemon server.js"
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "miss3persin",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.18.2",
     "faker": "^5.5.3",
     "json-server": "^0.17.3",
     "nodemon": "^3.0.1"

@@ -1,11 +1,10 @@
-const jsonServer = require('json-server');
+const express = require('express');
 const { blogPostAmount } = require('./generateData');
 
-const server = jsonServer.create();
-const router = jsonServer.router('db.json');
-const middlewares = jsonServer.defaults();
+const server = express();
+// const router = ex.router('db.json');
+// const middlewares = express.defaults();
 
-// Custom middleware to handle root URL
 const customRootMiddleware = (req, res, next) => {
   if (req.url === '/') {
     res.send('This is a Blog Posts API');
@@ -15,8 +14,8 @@ const customRootMiddleware = (req, res, next) => {
 };
 
 server.use(customRootMiddleware);
-server.use(middlewares);
-server.use(jsonServer.bodyParser);
+// server.use(middlewares);
+server.use(express.json());
 
 server.get('/posts', (req, res) => {
   const count = parseInt(req.query.count) || 10;
@@ -25,10 +24,10 @@ server.get('/posts', (req, res) => {
   res.jsonp(blogPosts);
 });
 
-server.use(router);
+// server.use(router);
 
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => {
-  console.log(`JSON Server is running on port ${PORT}`);
+  console.log(`Express server is running on port ${PORT}`);
 });
