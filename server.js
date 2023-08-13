@@ -8,7 +8,7 @@ const middlewares = jsonServer.defaults();
 // Custom middleware to handle root URL
 const customRootMiddleware = (req, res, next) => {
   if (req.url === '/') {
-    res.send('Welcome to the Blog Posts API');
+    res.send('This is a Blog Posts API');
   } else {
     next();
   }
