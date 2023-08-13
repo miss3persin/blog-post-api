@@ -2,8 +2,6 @@ const express = require('express');
 const { blogPostAmount } = require('./generateData');
 
 const server = express();
-// const router = ex.router('db.json');
-// const middlewares = express.defaults();
 
 const customRootMiddleware = (req, res, next) => {
   if (req.url === '/') {
@@ -14,7 +12,6 @@ const customRootMiddleware = (req, res, next) => {
 };
 
 server.use(customRootMiddleware);
-// server.use(middlewares);
 server.use(express.json());
 
 server.get('/posts', (req, res) => {
@@ -23,8 +20,6 @@ server.get('/posts', (req, res) => {
 
   res.jsonp(blogPosts);
 });
-
-// server.use(router);
 
 const PORT = process.env.PORT || 3000;
 

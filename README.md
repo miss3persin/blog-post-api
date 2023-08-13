@@ -1,6 +1,6 @@
 # Blog Post API for Website Testing
 
-This repository contains a simple API that generates dummy blog post data for testing purposes. The API is built using Node.js and the 'json-server' package. It's designed to provide realistic dummy data that can be used to populate a website's blog post section during development and testing.
+This repository contains a simple API that generates dummy blog post data for testing purposes. The API is built using Node.js and the Express Framework. It's designed to provide realistic dummy data that can be used to populate a website's blog post section during development and testing.
 
 ## Features
 
