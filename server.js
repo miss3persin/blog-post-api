@@ -1,5 +1,5 @@
 const jsonServer = require('json-server');
-const { blogPosts } = require('./generateData');
+const { blogPostAmount } = require('./generateData');
 
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
@@ -19,6 +19,9 @@ server.use(middlewares);
 server.use(jsonServer.bodyParser);
 
 server.get('/posts', (req, res) => {
+  const count = parseInt(req.query.count) || 10; // Read the count query parameter, default to 10 if not provided
+  const blogPosts = blogPostAmount(count); // Generate blog post data
+
   res.jsonp(blogPosts);
 });
 
